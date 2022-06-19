@@ -1,0 +1,116 @@
+.hotel{
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+.hotelContainer{
+    display: flex;
+    align-items: center;
+}
+.lSidebar{
+    flex: 3.5;
+    padding: 15px;
+
+    
+}
+.bounce{
+    top: 40px;
+
+}
+.rSidebar{
+    flex: 6.5;
+    padding: 15px;
+    width: 89%;
+    height: 100%;
+}
+.positions{
+    width: 100%;
+    height: 100%;
+
+}
+.leftContainer{
+    width: 80%;
+    padding: 20px;
+    background: linear-gradient(360deg, orange 5%, orangered);
+    position: static;
+    top: 0;
+   
+}
+.contants h1{
+    font-size: 26px;
+    font-weight: bolder;
+    margin: 15px 10px;
+}
+.inputOption{
+    display: flex;
+    flex-direction: column;
+}
+.label{
+    font-size: 21px;
+    font-weight: bold;
+    margin: 15px 10px;
+}
+.inputOption > input{
+    width: 400px;
+    padding: 9px 40px;
+    font-size: 18px;
+    height: 52px;
+    color: black;
+    letter-spacing: 2px;
+}
+.inputOption > span{
+    width: 400px;
+    padding: 15px 20px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    letter-spacing: 2px;
+    height: 50px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+.optionInputs{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.inputOptions{
+    display: flex;
+    align-items: center;
+}
+.inputOptions>b{
+    font-size: 20px;
+    margin-top: 20px ;
+    align-items: center;
+    align-self: center;
+}
+.inputOptions>input{
+    width: 70px;
+    height: 40px;
+}
+.mins{
+    margin-left: 140px;
+
+}
+.nights{
+    margin-left: 135px;
+    
+}
+.rnumbers{
+    margin-left: 256px;
+}
+button{
+    width: 400px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
