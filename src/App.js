@@ -7,13 +7,14 @@ import Login from "./Pages/Login"
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import Header from './Components/Header'
 import Hotel from './Components/Hotel'
-import ExactHotel from './ExactHotel'
+import ExactHotel from './Components/ExactHotel'
 import { LoginContext } from './Context/LoginContext'
 import Bed from './Components/Bed'
 import Slider from './Components/Slider'
 import Swipers from './Components/Swipers'
 
 function App() {
+  
   const {user } = useContext(LoginContext)
   return (
     <div>

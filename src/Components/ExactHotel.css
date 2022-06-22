@@ -1,0 +1,100 @@
+.ExactHotel{
+    width:100%;
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.exactContainer{
+    width: 80%;
+    padding: 30px;
+}
+.exactBody{
+    width: 100%;
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    margin: 30px 15px;
+}
+.exactDisplay{
+    width: 100%;
+    padding: 10px;
+}
+.exactHeading{
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}
+.headerDescription{
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+.headerIcons{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    gap: 20px;
+}
+.headerIcons > p{
+    font-size: 20px;
+    margin-left: 8px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.header2{
+    font-size: 22px;
+    color: teal;
+    margin-top: 10px;
+    letter-spacing: 1.5px;
+}
+.header1{
+    font-size: 26px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+.headIcon{
+    font-size: 24px;
+}
+.headerButton > button{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 500px;
+    right: 10%;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, rgba(1, 1, 172, 0.8) 1%, rgba(77, 10, 235, 0.6));
+}
+.headerButton > button:active{
+    background-color: red;
+    transition: all 0.2s ease-in-out;
+}
+.exactPhotos{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+    width: 100%;
+    margin-left: 130px;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+.imagges{
+    width: 410px;
+    height: 330px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 40px;
+}
+.headNavbar{
+    top: 0px;
+    /* position: sticky; */
+    z-index: 89;
+}

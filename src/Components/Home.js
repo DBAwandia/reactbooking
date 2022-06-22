@@ -1,6 +1,6 @@
 import Navbar from './Navbar'
 import SearchContainer from './SearchContainer'
-import MailList from './MailList'
+// import MailList from './MailList'
 import React from 'react'
 import HotelApartments from './HotelApartments'
 import RatingPhoto from './RatingPhoto'

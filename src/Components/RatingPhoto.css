@@ -104,16 +104,17 @@ form>textarea{
 
 }
 form button{
-    width: 570px;
-    height: 59px;
+    width: 579px;
+    height: 64px;
     align-items: center;
     text-align: center;
     padding: 18px;
     margin-top: 20px;
     margin-left: 165px;
+    opacity: 0.5;
     margin-bottom: 5px;
-    border-radius: 10px;
     font-weight: bold;
+    text-transform: uppercase;
     font-size: 24px;
     letter-spacing: 2px;
     background: linear-gradient(180deg, rgb(131, 131, 214) 10%, rgb(61, 61, 238));
