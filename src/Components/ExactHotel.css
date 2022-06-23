@@ -1,5 +1,6 @@
 .ExactHotel{
     width:100%;
+    height: 100vh;
     padding: 20px;
     position: relative;
     cursor: pointer;
@@ -93,8 +94,94 @@
     background-repeat: no-repeat;
     margin-left: 40px;
 }
+.photoContainer{
+    position: relative;
+    z-index: 90;
+}
 .headNavbar{
     top: 0px;
     /* position: sticky; */
     z-index: 89;
+}
+.exactFooter{
+    width: 100%;
+    padding: 20px;
+    margin-top: 50px;
+    flex: 0.6;
+   
+}
+.fFoooter{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.footerHeader{
+    width: 60%;
+    padding: 20px;
+}
+.footerHeader>h1{
+    font-size: 26px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+.footerHeader>p{
+    padding: 10px;
+    align-items: center;
+    line-height: 40px;
+    letter-spacing: 0.5px;
+}
+.footerPayment{
+    width: 25%;
+    flex: 0.4;
+    padding: 35px;
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    margin-top: -30px;
+    right: 60px;
+    flex-direction: column;
+    background: rgba(44, 73, 233,0.43);
+}
+.paraglaph{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.paraglaphs{
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.paraglaph>p{
+    width: 59%;
+    align-items: center;
+    letter-spacing: 1px;
+    line-height: 40px;
+}
+.h2Pay{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.h2Pay>h2{
+    font-size: 23px;
+    font-weight: 900;
+    color: rgb(14, 155, 14);
+    letter-spacing: 1px;
+}
+.foooterButton{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, rgba(1, 1, 172, 0.8) 1%, rgba(77, 10, 235, 0.6));
+}
+.foooterButton:active{
+    background-color: red;
+    transition: all 0.2s ease-in-out;
+}
+.shdowImage{
+    width: 100%;
 }
