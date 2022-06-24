@@ -1,32 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Navbar from './Navbar'
 import './ExactHotel.css'
-import {CancelOutlined, LocationCity} from '@mui/icons-material'
+import { LocationCity} from '@mui/icons-material'
 import ShdowImage from './ShdowImage'
-function ExactHotel() {
-  const photos = [
-    {
+import {CircularProgress } from '@mui/material'
+const photos = [
+  {
+  imge: "/images/drinks.jpg"
+  },
+  {
+    imge: "/images/red.webp"
+  },
+  {
+    imge: "/images/waiter.jpg"
+  },
+  {
     imge: "/images/drinks.jpg"
-    },
-    {
-      imge: "/images/red.webp"
-    },
-    {
-      imge: "/images/waiter.jpg"
-    },
-    {
-      imge: "/images/drinks.jpg"
-    },
-    {
-      imge: "/images/red.webp"
-    },
-    {
-      imge: "/images/waiter.jpg"
-    },
-    {
-      imge: "/images/drinks.jpg"
-    }
-]
+  },
+  {
+    imge: "/images/red.webp"
+  },
+  {
+    imge: "/images/waiter.jpg"
+  }]
+function ExactHotel() {
+const [ level, setLevel ] =useState(0)
+useEffect(()=>{
+  const timer = setInterval(()=>{
+      setLevel((newTimer)=> newTimer >= 100 ? 0 : newTimer + 10)
+  },500)
+
+  return ()=>{
+    clearInterval(timer)
+  }
+},[])
 
 const[openImage, setOpenImage ] = useState(false)
    return (
@@ -55,16 +62,17 @@ const[openImage, setOpenImage ] = useState(false)
                 {photos.map((item,i)=>{
                   return <div className='exactPhoto' key={i}>
                             <div className='photoContainer'>
-                              <img className='imagges' src={item.imge} alt='' />
+                              <img className='imagges' onClick={()=>setOpenImage(!openImage)} src={item.imge} alt='' />
                             </div>
+                            <b>Click the image to see more...<CircularProgress value={level} sx={{ width: 20, height: 20, marginLeft: 15}}/></b>
                          
                         </div>
                 })}
                
               </div> 
-              <div className='shdowImage'>
-                <ShdowImage photos={photos}/>
-              </div>
+             {openImage && <div className='shdowImage'>
+                <ShdowImage  setOpenImage={setOpenImage} />
+              </div>}
               <div className='exactFooter'>
                   <div className='fFoooter'>
                     <div className='footerHeader'>

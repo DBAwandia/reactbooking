@@ -8,30 +8,40 @@ import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 import 'swiper/modules/scrollbar/scrollbar.min.css'
+const photos = [
+  {
+  imge: "/images/drinks.jpg"
+  },
+  {
+    imge: "/images/red.webp"
+  },
+  {
+    imge: "/images/waiter.jpg"
+  }]
 
-
-function ShdowImage({photos}) {
+function ShdowImage({setOpenImage}) {
   return (
     <Swiper
         modules={[Pagination,Navigation,Autoplay,Scrollbar]}
         pagination={{clickable: true}}
         navigation
         loop
-        spaceBetween={20}
-        // slidesPerView={1}
+        autoplay={{
+          delay: 5000,
+        }}
+        slidesPerView={1}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
     >
     <div className='imageShadow'>
-     <CancelOutlined className='hadoowIcon'/>
          <div className='imageShadows'>
          {photos.map((item,i)=>{
                   return  <div className='shadoImage' key={i}>
                                 <div className='contentImage'>
-                                    {/* <SwiperSlide className='shadowSlider'> */}
+                                    <SwiperSlide className='shadowSlider'>
+                                        <CancelOutlined onClick={()=>setOpenImage(false)} className='hadoowIcon' sx={{position: "absolute",  width: 50, height: 50}}/>
                                         <img  className='shadoImagges' src={item.imge} alt='' />
-                                    {/* </SwiperSlide> */}
-
+                                    </SwiperSlide>
                                 </div>
 
                  </div>

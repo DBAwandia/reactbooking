@@ -4,6 +4,7 @@
     padding: 20px;
     position: relative;
     cursor: pointer;
+    z-index: 15;
 }
 .exactContainer{
     width: 80%;
@@ -183,5 +184,11 @@
     transition: all 0.2s ease-in-out;
 }
 .shdowImage{
-    width: 100%;
+    position: absolute;
+    z-index: 899;
+    margin: 10px 0px;
+    top: 83%;
+    padding: 0;
+    width: 92%;
+    height: 100vh;
 }
