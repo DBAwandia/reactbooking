@@ -1,0 +1,63 @@
+.room{
+    width: 100%;
+    height: 90vh;
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: gray;
+}
+.roomContainer{
+    justify-content: center;
+    padding: 20px;
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    top: 0;
+}
+.roomObject{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+.roomObject > b{
+    margin: 20px 15px;
+}
+.rContainer{
+    display: flex;
+    align-items: center;
+    gap: 150px;
+}
+.subrContainer{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.checkboxContaiber{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.subBox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.subBox>input{
+    width: 35px;
+    height: 35px;
+}
+.subBox>input:hover{
+    background: lightgrey;
+}
+.rNutton{
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 21px;
+    height: 52px;
+}

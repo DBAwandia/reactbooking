@@ -12,6 +12,7 @@ import { LoginContext } from './Context/LoginContext'
 import Bed from './Components/Bed'
 import Slider from './Components/Slider'
 import Swipers from './Components/Swipers'
+import Room from './Components/Room'
 
 function App() {
   
@@ -24,10 +25,11 @@ function App() {
             <Route path='/navbar' element={<Navbar/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='hotels' element={<Hotel/>} />
-            <Route path='/hotelid' element={<ExactHotel/>} />
+            <Route path='/:hotelid' element={<ExactHotel/>} />
             <Route path='/register' element={<Registration/>} />
             <Route path='/bed' element={<Bed/>} />
             <Route path='/swiper' element={<Slider/>} />
+            <Route path='/room' element={<Room/>} />
             <Route path='/sliper' element={<Swipers/>} />
 
         </Routes>

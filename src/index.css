@@ -34,12 +34,7 @@ button:active{
     transition: all 0.2s ease;
     
 }
-:root{
-    --swiper-navigation-color: rgba(187, 180, 168,0.05);
-    --swiper-navigation:{
-        opacity: 0;
-    }
-}
+
 ul{
     list-style: none;
 }

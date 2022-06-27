@@ -1,7 +1,8 @@
 import './ProprtyList.css'
 import React from 'react'
 import {Bounce } from 'react-reveal'
-
+// import useFetch from '../Hooks/useFetch'
+import { useNavigate } from 'react-router-dom'
 // const imagess = [{
 //   imge: '/images/red.webp',
 //   title:"Tower Street Apartments",
@@ -17,15 +18,22 @@ import {Bounce } from 'react-reveal'
 //   desc:"With air Condtioning",
 // }]
 function PropertyList({items,loading}) {
+  // const id = [{id: 62961aa5cf6afc067d2fd045}]
+  // const { items} = useFetch(`http://localhost:5000/hotel/${hotelid}`)
+  
+  // const handleFind = ()=>{
 
+  // }
+console.log(items)
+const navigate = useNavigate()
   return (
     <div className='propertyList'>
       <Bounce>
       {loading ?("LOADING"):(
       <div className='pContainer'>
      
-         {items.map((item,i)=>{
-              return <div className='pImageContainer' key={i} >
+         {items.map((item)=>{
+              return <div className='pImageContainer' key={item._id} >
               <img src={item.photos}  />
               <div className='pDescription'>
                 <h1>{item.title}</h1>
@@ -42,7 +50,9 @@ function PropertyList({items,loading}) {
                 <div className='pPrice'>
                   <h1>${item.cheapestPrice}</h1>
                   <p>Includes taxes and fees</p>
-                  <button className='buttonss'>See Availability</button>
+                  <button className='buttonss' onClick={()=>{
+                    navigate(`/${item._id}`)
+                  }}>See Availability</button>
                 </div>
 
               </div>

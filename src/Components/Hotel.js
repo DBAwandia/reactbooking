@@ -19,7 +19,7 @@ function Hotel() {
     const handleClick = ()=>{
         reFetch()
     }
-    console.log(data)
+    
     const keys = ["name", "city", "type"]
     const Search =(items) =>{
         return items.filter((item)=>{
