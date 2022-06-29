@@ -31,6 +31,7 @@ router.put("/hotel/:id", async(req,res)=>{
     }
 })
 router.get("/hotel/:id", async(req,res)=>{
+    
     try{
         const getHotel = await hotels.findById(req.params.id)
         res.status(200).json(getHotel)

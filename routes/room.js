@@ -36,6 +36,27 @@ router.post("/:hotelid", async(req,res)=>{
 //         res.status(500).json(err)
 //     }
 // })
+router.get("/room/:id", async(req,res)=>{
+    try{
+        const findRoomId = await rooms.findById(req.params.id)
+        res.status(200).json(findRoomId)
+    }catch(err){
+        res.status(500).json(err)
+    }
+})
 
-
+//updateRoomAvailability
+router.put("/availability/:id", async(req,res)=>{
+    try{
+        await rooms.updateOne({"roomNumbers._id": req.params.id},
+        {
+            $push: {
+                "roomNumbers.$.unavailableDates": req.params.date
+            }
+        })
+        res.status(200).json("updated")
+    }catch(err){
+        res.status(500).json(err)
+    }
+})
 module.exports = router
