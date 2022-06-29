@@ -29,7 +29,7 @@ function App() {
             <Route path='/register' element={<Registration/>} />
             <Route path='/bed' element={<Bed/>} />
             <Route path='/swiper' element={<Slider/>} />
-            <Route path='/room' element={<Room/>} />
+            {/* <Route path='/room' element={<Room/>} /> */}
             <Route path='/sliper' element={<Swipers/>} />
 
         </Routes>
