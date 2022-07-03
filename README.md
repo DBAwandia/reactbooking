@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+{
+    "name": "Kalk Hotel",
+    "type": "Parks",
+    "title": "Serena",
+    "city": "Eth",
+    "distance": "5km",
+    "photos": [],
+    "desc": "Everything available",
+    "rating": 4,
+    "cheapestPrice": 68,
+    "featured": true
+ 
+}

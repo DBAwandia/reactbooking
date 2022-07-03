@@ -44,7 +44,7 @@ function Hotel() {
                             <p className='label'>Description</p>
                                 <input type='text' placeholder={destination} onChange={(e)=>setDestination(e.target.value.toLowerCase())}/>
                                 <p className='label'>CHECK-in-DATES</p>
-                            <span onClick={()=>setOpenDate(!openDate)}>{format(date[0].startDate, "MM/dd/yyyy")} to {format(date[0].endDate, "MM/dd/yyyy")} </span>
+                            <span onClick={()=>setOpenDate(!openDate)}>{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`} </span>
                             {openDate && <DateRange
                                         className='openDatess'
                                         editableDateInputs={true}

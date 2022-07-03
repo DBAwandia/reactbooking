@@ -5,7 +5,7 @@ import useFetch from '../Hooks/useFetch'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import { SearchContext } from '../Context/SearchContext'
-function Room({setOpenApp,hotelID}) {
+function Room({setOpenApp,days,hotelID,options}) {
     const [selectedRooms, setSelectedRooms] = useState([])
     const {data, loading, error } = useFetch(`http://localhost:5000/hotel/room/${hotelID}`)
     const {date} = useContext(SearchContext)
@@ -27,10 +27,10 @@ function Room({setOpenApp,hotelID}) {
 
         return date;
     }
-    const alldates = getDatesInRange(date[0].startDate, date[0].endDate)
-
-    const isAvailable = (roomNumbers) =>{
-        const isFound = roomNumbers.unavailableDates.some((dates)=>(
+    const alldates = getDatesInRange(date[0]?.startDate, date[0]?.endDate)
+    console.log(alldates)
+    const isAvailable = (roomNumber) =>{
+        const isFound = roomNumber.unavailableDates.some((dates)=>(
             alldates.includes(new Date(dates).getTime())
         ))
         return !isFound
@@ -41,40 +41,54 @@ function Room({setOpenApp,hotelID}) {
         try{
             await Promise.all(
                 selectedRooms.map((roomID) =>{
-                    const res = axios.put(`http://localhost:5000/room/${roomID}`,{date: alldates})
+                    const res = axios.put(`http://localhost:5000/room/availability/${roomID}`,{date: alldates})
+                    return res.data
                 })
             )
             //navigate to payment
             navigate("/")
         }catch(err){}
     }
+    console.log(selectedRooms)
   return (
     <div className="room">
-        <div className="roomContainer">
+            
             <Cancel onClick={()=>setOpenApp(false)} sx={{ width: 30, height: 30, color: "red"}} className='cancelX' />
-            <div className='roomObject'>
+        
+       {data && data.map((item)=>(
+
+       <div className="roomContainer" key={item._id}>
+                    <div className='roomObject'>
              <b>Select yours:</b>
                 <div className='rrContainer'>
                     <div className='subrContainer'>
-                        <h1>King Box</h1>
-                        <p>King size bed, 1 bathroom , balcony</p>
-                        <p>Max people: 2</p>
-                        <h2>500</h2>
-                    </div>
-                    <div className='checkboxContaiber'>
-                        <div className='subBox'>
-                            <p>201</p>
-                            <input type='checkbox'  />
+                        <h1 style={{fontSize: 25,marginLeft: "-50px", fontWeight: 600}}> {item.title}</h1>
+                        <p style={{ fontWeight: 600}}>{item.desc}</p>
+                        <div className='dDisplay'>
+                        <span style={{fontSize: 19, fontWeight: 600}}>Max people:</span><p style={{marginLeft: 20}}> {item.maxPeople}</p>
                         </div>
-                        <div className='subBox'>
-                            <p>202</p>
-                            <input type='checkbox' onChange={handleSelect} value={roomNumber._id}/>
+                        <div className='dDisplay'>
+                        <span style={{fontSize: 19, fontWeight: 600}}>Price:</span><h2 style={{marginLeft: 20, color: "green",fontSize: "22", letterSpacing: "2px"}}>  ${item.price*days*options.room}</h2>
                         </div>
                     </div>
+                  
+                    {item && item.roomNumbers.map((roomNumber,i)=>{
+                    return  <div className='checkboxContaiber' key={i}>
+                        <div className='subBox'>
+                            <p>{roomNumber.number}</p>
+                            <input type='checkbox'
+                             disabled={!isAvailable(roomNumber)} 
+                             onChange={handleSelect} 
+                             value={roomNumber._id}
+                             />
+                        </div>
+                    </div> })}
                 </div>
-                <button className='rNutton' onClick={handleClick}>Reserve now</button>
+                <button className='rNutton'
+                 onClick={handleClick}
+                 >Reserve now</button>
             </div>
-        </div>
+        </div>))}
     </div>
   )
 }

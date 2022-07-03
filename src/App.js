@@ -12,7 +12,7 @@ import { LoginContext } from './Context/LoginContext'
 import Bed from './Components/Bed'
 import Slider from './Components/Slider'
 import Swipers from './Components/Swipers'
-import Room from './Components/Room'
+import MappingObj from './Components/MappingObj'
 
 function App() {
   
@@ -29,7 +29,7 @@ function App() {
             <Route path='/register' element={<Registration/>} />
             <Route path='/bed' element={<Bed/>} />
             <Route path='/swiper' element={<Slider/>} />
-            {/* <Route path='/room' element={<Room/>} /> */}
+            <Route path='/room' element={<MappingObj/>} />
             <Route path='/sliper' element={<Swipers/>} />
 
         </Routes>

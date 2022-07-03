@@ -7,7 +7,7 @@ import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
 import { SearchContext } from '../Context/SearchContext';
 import { useNavigate } from 'react-router-dom';
-function searchContainer() {
+function SearchContainer() {
     const[open, setOpen] = useState(false)
     const[openDates, setOpenDates] = useState(false)
     const navigate = useNavigate()
@@ -34,7 +34,7 @@ function searchContainer() {
   
    
     const handleSearch = () =>{
-        dispatch({type: "NEW_SEARCH", payload: destination,options,date})
+        dispatch({type: "NEW_SEARCH", payload: {destination,options,date}})
         navigate("/hotels", {state: {destination,options,date}})
     }
   return (
@@ -46,11 +46,7 @@ function searchContainer() {
             </div>
             <div className='inputs'>
                 <CalendarMonth sx={{width: "38px !important", color: "darkgray", height: "38px !important",marginLeft: "18px !important"}}/>
-                <span onClick={()=>setOpenDates(!openDates)}>{format(
-                    date[0].startDate, "MM/dd/yyyy"
-                )} to {format(
-                    date[0].endDate, "MM/dd/yyyy"
-                )} </span>
+                <span onClick={()=>setOpenDates(!openDates)}>{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`} </span>
                 {openDates && 
                     <div className={openDates ? "dates datesBlack" : "dates"} >
                         <DateRange 
@@ -86,4 +82,4 @@ function searchContainer() {
   )
 }
 
-export default searchContainer
+export default SearchContainer
