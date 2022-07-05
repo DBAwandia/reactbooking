@@ -46,7 +46,7 @@ function Room({setOpenApp,days,hotelID,options}) {
                 })
             )
             //navigate to payment
-            navigate("/")
+            navigate("/stripe")
         }catch(err){}
     }
     console.log(selectedRooms)
