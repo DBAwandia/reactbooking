@@ -21,6 +21,9 @@ db.once("open", ()=>console.log("connected to mongoose"))
 const roomRouter = require("./routes/room")
 app.use("/room", roomRouter)
 
+const orderRouter = require("./routes/Orders")
+app.use("/Orders" , orderRouter)
+
 const hotelRouter = require("./routes/hotel")
 app.use("/hotel", hotelRouter)
 
