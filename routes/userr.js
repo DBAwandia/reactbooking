@@ -3,6 +3,7 @@ const router =express.Router()
 const users = require("../models/User")
 const CryptoJS = require("crypto-js")
 const jwt = require("jsonwebtoken")
+const stripe = require("stripe")(process.env.STRIPE_KEY)
 const { verifyUserAndAuthorization,verifyIsAdmin } = require("../verification/verifyTokens")
 // const { verifyTokenAndAuthorization,verifyIsAdmin } = require("../models/verification")
 
@@ -30,6 +31,8 @@ router.post("/login", async(req,res)=>{
     try{
         const user = await users.findOne({email: req.body.email})
         !user && res.status(400).json({message: "Please register"})
+        
+
         const hashedPassword = CryptoJS.AES.decrypt(user.password, process.env.PASS_SEC)
         const originalPass = hashedPassword.toString(CryptoJS.enc.Utf8)
         originalPass !== req.body.password && res.status(400).json({message: "Error login"})
@@ -81,6 +84,19 @@ router.get("/"),verifyIsAdmin, async(req,res)=>{
         res.status(500).json(err)
     }
 }
-
+//Stripe payment
+router.post("/checkout", (req,res)=>{
+  stripe.charges.create({
+    source: req.body.tokenId,
+    amount: req.body.amount,
+    currency: "usd"
+  }, (stripeErr,stripeRes)=>{
+    if(stripeErr){
+        res.status(500).json(stripeErr)
+    }else{
+        res.status(200).json(stripeRes)
+    }
+  })
+})
 
 module.exports = router
