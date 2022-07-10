@@ -35,11 +35,23 @@
     letter-spacing: 1px;
     margin-left: 10px
 }
-.shoppingCart>p{
+.paragraLayer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.paragraLayer>p{
     font-size: 19px;
     font-weight: 450;
     letter-spacing: 1.5px;
+    color: red;
     margin-left: 10px
+}
+.shopSpan{
+    margin-left: 15px;
+    font-size: 21px;
+    letter-spacing: 1.3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 .paymentOPtion{
     margin: 20px 5px;
@@ -50,6 +62,14 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.orderstartss{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.cardelement{
+    font-size: 29px;
 }
 .orderStats>p{
     font-size: 20px;
@@ -99,7 +119,7 @@
     letter-spacing: 0.9px
 }
 
-.buttonContainer>button{
+.stripeButton{
    
     text-transform: uppercase;
     letter-spacing: 1.5px;

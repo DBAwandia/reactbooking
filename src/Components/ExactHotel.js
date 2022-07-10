@@ -69,7 +69,6 @@ function dayDifference( date1 , date2){
   return diffDays;
 }
 const days = dayDifference(  date[0]?.endDate,   date[0]?.startDate)
-console.log(days)
    return (
     <div className='ExactHotel'>
       <div className='headNavbar'>

@@ -1,6 +1,6 @@
 import React,{useState,useEffect,useContext} from 'react'
 import './Stripe.css'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,useLocation} from 'react-router-dom'
 import { DetailsContext } from '../Context/DetailsContext';
 import axios from 'axios'
 function Stripe() {
@@ -11,20 +11,22 @@ function Stripe() {
   const [province,setProvince] = useState("")
   const navigate = useNavigate()
   const {savedData,loading,error,dispatch} = useContext(DetailsContext)
+    const location = useLocation()
+    const stripeID = location.state.hotelID
   const handleSubmitDocuments = async(e) =>{
     e.preventDefault()
+    
     dispatch({type:"LOADING_DETAILS"})
       try{
       const res = await axios.post("http://localhost:5000/Orders/stripecomplete",{name: name, areas: areas, province: province,town: town, number: number})
       dispatch({type:"LOADED_DETAILS", payload: res.data})
-      navigate("/completed")
+      navigate("/completed",{state: {stripeID}})
       }catch(err){
     dispatch({type:"ERROR_DETAILS", payload: err.res.message})
         
       }
     
   }
-
 
   return (
     <div className='stripeContainer'>
