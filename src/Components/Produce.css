@@ -1,0 +1,15 @@
+.products{
+    width: 100%;
+}
+.productContainer{
+    display: flex;
+    align-items: center;
+}
+.producttContainer{
+    flex: 3;
+    padding: 20px;
+    margin-top: 140px;
+}
+.productContainer{
+    flex: 7;
+}

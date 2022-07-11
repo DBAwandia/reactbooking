@@ -1,0 +1,15 @@
+.users{
+    width: 100%;
+}
+.userContainer{
+    display: flex;
+    align-items: center;
+}
+.userrContainer{
+    flex: 3;
+    padding: 20px;
+    margin-top: 140px;
+}
+.userContainer{
+    flex: 7;
+}

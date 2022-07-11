@@ -1,0 +1,17 @@
+.adminHome{
+    width: 100%;
+}
+.adminContainer{
+    display: flex;
+    align-items: center;
+
+}
+.sideContainer{
+    flex: 3;
+    padding: 15px;
+
+}
+.sideContainers{
+    flex: 7;
+    padding: 15px;
+}
