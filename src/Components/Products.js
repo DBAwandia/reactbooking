@@ -11,7 +11,7 @@ function Products() {
           <Sidebar />
         </div>
         <div className='productContainer'>
-          Products
+          
         </div>
       </div>
     </div>

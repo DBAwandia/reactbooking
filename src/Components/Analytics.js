@@ -1,20 +1,23 @@
 import React from 'react'
 import './Analytics.css'
 import { ArrowUpward, ArrowDownward } from '@mui/icons-material'
+import Progress from './Progress'
+import Charts from './Charts'
+import Tables from './Tables'
 function Analytics() {
   return (
     <div className='analytics'>
       <div className='analyticContainer'>
         <div className='analyicContain'>
           <div className='analyticChart'>
-            <h1>Revenue</h1>
+            <h1>Users</h1>
             <div className='analyticRating'>
               <span>$2,566</span>
               <p>+11.5%</p>
               <ArrowUpward sx={{ fontSize: 25, color: "green"}} />
             </div>
             <p className='analyicDesc'>
-              Compared to last Month
+              See all users
             </p>
           </div>
         </div>
@@ -27,26 +30,49 @@ function Analytics() {
               <ArrowUpward  sx={{ fontSize: 25, color: "green"}}/>
             </div>
             <p className='analyicDesc'>
-              Compared to last Month
+              See all orders
             </p>
           </div>
         </div>
         <div className='analyicContain'>
           <div className='analyticChart'>
-            <h1>Cost</h1>
+            <h1>Earnings</h1>
             <div className='analyticRating'>
               <span>$8,566</span>
               <p>-23.5%</p>
               <ArrowDownward  sx={{ fontSize: 25, color: "red"}}/>
             </div>
             <p className='analyicDesc'>
-              Compared to last Month
+              See all Earnings
+            </p>
+          </div>
+        </div>
+        <div className='analyicContain'>
+          <div className='analyticChart'>
+            <h1>My Balance</h1>
+            <div className='analyticRating'>
+              <span>$8,566</span>
+              <p>-23.5%</p>
+              <ArrowDownward  sx={{ fontSize: 25, color: "red"}}/>
+            </div>
+            <p className='analyicDesc'>
+              See details
             </p>
           </div>
         </div>
       </div>
       <div className='reactCharts'>
-
+        <div className='analtycsCharts'>
+          <div className='progressAnalytics'>
+            <Progress/>
+          </div>
+          <div className='chartsAnalytics'>
+            <Charts />
+          </div>
+        </div>
+      </div>
+      <div className='analyticTable'>
+        <Tables />
       </div>
     </div>
   )

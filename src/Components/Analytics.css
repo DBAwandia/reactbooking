@@ -2,7 +2,6 @@
     flex: 1;
     height: 100%;
     padding: 20px;
-    border-left: 4px solid rgba(255, 255,255, 0.12);
 }
 .analyticContainer{
     display: flex;
@@ -18,8 +17,8 @@
     flex-direction :column;
     gap: 10px;
     padding: 25px;
-    width: 250px;
-    height: 260px;
+    width: 210px;
+    height: 225px;
     box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.25);
     -webkit-box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.35);
     -moz-box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.15);
@@ -60,4 +59,19 @@
     font-weight: 530;
     letter-spacing: 1.2px;
     margin-left: 10px;
+}
+.reactCharts{
+    padding: 25px;
+    flex: 1;
+}
+.analtycsCharts{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.progressAnalytics{
+    flex: 3.4;
+}
+.chartsAnalytics{
+    flex: 6.6;
 }

@@ -5,7 +5,7 @@
     top: 0px;
     position: sticky;
     z-index: 9;
-    background: linear-gradient( 180deg, rgb(22, 165, 165),rgb(47, 207, 87))
+    background: rgb(120, 120, 231);
 }
 .navContainer{
     display: flex;
