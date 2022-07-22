@@ -20,3 +20,18 @@
     object-fit: cover;
     border: 0;
 }
+.status{
+    padding:5px;
+    font-size: 18px;
+}
+.Pending{
+    color: yellow;
+}
+.Approved{
+    color: green;
+
+}
+.Failed{
+    color: red;
+
+}

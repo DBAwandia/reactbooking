@@ -33,28 +33,30 @@ function Sidebar() {
         </div>
         <div className='sideDashboard'>
           <p> Quick Menu</p>
-          <Link to='users'>
+          <Link style={{textDecoration: "none"}}  to ='/users'>
               <div className='iconsDisplay'>
               <PersonOutlined sx={{fontSize: 37,color: "teal"}}/>
               <h2>Users</h2>
             </div>
            </Link>
 
-           <Link to='/products'>
+           <Link to='/hotel'>
             <div className='iconsDisplay'>
               
               <Inventory2Outlined sx={{fontSize: 37,color: "teal"}}/>
-              <h2>Products</h2>
+              <h2>Hotels</h2>
             </div>
            </Link>
            <div className='iconsDisplay'>
             {/* <MonetizationOutlined /> */}
             <h2>Transactions</h2>
            </div>
+           <Link to='/room'>
            <div className='iconsDisplay'>
             <BarChartOutlined sx={{fontSize: 37}}/>
-            <h2>Reports</h2>
+            <h2>Rooms</h2>
            </div>
+           </Link>
           </div>
           <div className='sideDashboard'>
             <p>Notifications</p>

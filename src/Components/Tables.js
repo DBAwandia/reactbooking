@@ -26,7 +26,7 @@ const rows = [
         date: "2stMarch",
         amountr: 578,
         method: "online",
-        status: "pending"
+        status: "Pending"
     }   ,{
         id: 3,
         product: "OS",
@@ -79,7 +79,11 @@ function Tables() {
               <TableCell className='tablecell'>{row.date}</TableCell>
               <TableCell className='tablecell'>{row.amountr}</TableCell>
               <TableCell className='tablecell'>{row.method}</TableCell>
-              <TableCell className='tablecell'>{row.status}</TableCell>
+              <TableCell className='tablecell'>
+                <span className={`status ${row.status}`}>
+                {row.status}
+                </span>
+                </TableCell>
 
             </TableRow>
           ))}

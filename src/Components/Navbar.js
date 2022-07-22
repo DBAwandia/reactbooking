@@ -2,11 +2,14 @@ import { LanguageOutlined, NotificationsOutlined, SettingsOutlined } from '@mui/
 import { Avatar } from '@mui/material'
 import React from 'react'
 import './Navbar.css'
+import {Link} from 'react-router-dom'
 function Navbar() {
   return (
     <div className='admNavbar'>
       <div className='navContainer'>
-        <h1>Admin Dashboard</h1>
+        <Link style={{textDecoration: "none"}}  to ='/'>
+        <h1>Admins </h1>
+        </Link>
         <div className='admIcons'>
           <div className='admNotification'>
             <NotificationsOutlined sx={{fontSize: 45}}/>

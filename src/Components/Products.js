@@ -1,8 +1,55 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import './Produce.css'
 import Navbar from './Navbar'
+import axios from 'axios'
+import { DataGrid } from '@mui/x-data-grid';
+import {hotelColumns} from './DataTables'
+import {useLocation,Link} from 'react-router-dom'
 import Sidebar from './Sidebar'
 function Products() {
+  const location = useLocation()
+  const [data, setData] = useState([])
+  const [list, setList] = useState([])
+  const path = location.pathname.split("/")[1]
+  const obj = `http://localhost:5000/hotel/${path}`
+  const fetchData = async(obj)=>{
+    try{
+      const res = await axios.get(obj)
+      setData(res.data)
+    }catch(err){}
+  }
+  fetchData(obj)
+
+  useEffect(()=>{
+    setList(data)
+  },[data])
+
+  const handleDelete = async(id)=>{
+    try{
+      await axios.delete(`http://localhost:5000/hotel/${path}/${id}`)
+      setList(list.filter(item => item._id !== id))
+    }catch(err){}
+
+  }
+
+  const actionColumns = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: (params)=>{
+        return(
+          <div className='cellAction'>
+            <Link style={{textDecoration: "none"}}  to ={`/${path}/new`} >
+              <div className='viewButton'>View</div>
+            </Link>
+            <div className='deleteButton' onClick ={()=>handleDelete(params.row._id)}>Delete</div>
+
+          </div>
+        )
+      }
+    }
+  ]
   return (
     <div className='products'>
        <Navbar/>
@@ -11,7 +58,15 @@ function Products() {
           <Sidebar />
         </div>
         <div className='productContainer'>
-          
+          <div className='dataGrid'>
+            <DataGrid
+             rows={list}
+             columns={hotelColumns.concat(actionColumns)}
+            pageSize ={9}
+            rowsPerPageSize={[9]}
+            getRowId = {(row) => row._id}
+            />
+          </div>
         </div>
       </div>
     </div>

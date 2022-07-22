@@ -25,10 +25,10 @@ name: 'May',
 Total: 1200
 }
 ];
-function Charts() {
+function Charts({title}) {
   return (
     <div className='chartss'>
-      <div style={{margin: "30px 140px", fontSize: 25,color: "red"}} >MONTHLY REPORT SALES  </div>
+      <div style={{margin: "30px 140px", fontSize: 25,color: "red"}} >{title}  </div>
     <ResponsiveContainer width="100%" height={400}>
           <AreaChart
             width={500}

@@ -67,7 +67,7 @@ function Analytics() {
             <Progress/>
           </div>
           <div className='chartsAnalytics'>
-            <Charts />
+            <Charts title='Revenue past 6(Month(s))'/>
           </div>
         </div>
       </div>
